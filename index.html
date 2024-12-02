@@ -1,35 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Магазин музыкальных инструментов</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          overflow-x: hidden;
+      }
+      header {
+          background: url(images/backs.jpg);
+          color: #fff;
+          padding: 20px 0;
+          text-align: center;
+          position: relative;
+          z-index: 2;
+      }
+      nav {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+      }
+      nav a {
+          color: white;
+          text-decoration: none;
+          margin-left: 15px;
+          padding: 8px 15px;
+          border-radius: 5px;
+          transition: background 0.3s;
+      }
+      nav a:hover {
+          background: rgba(255, 255, 255, 0.2);
+      }
+      .section {
+          height: 100vh; 
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+          background: #f0f0f0; 
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .introduction {
+          background: url(images/back.jpg) no-repeat center center fixed; 
+          background-size: cover;
+          color: #fff;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+      }
+      footer {
+          background: #333;
+          color: #fff;
+          text-align: center;
+          padding: 10px 0;
+          width: 100%;
+          position: relative;
+          bottom: 0;
+      }
+      .instrument {
+          border: 1px solid #ccc;
+          margin: 10px;
+          padding: 10px;
+          background: #ffffff;
+          border-radius: 5px;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+          display: flex;
+          align-items: center;
+      }
+      .instrument img {
+          max-width: 100px;
+          margin-right: 20px;
+      }
+      .reviews {
+          width: 80%;
+          max-width: 1000px;
+          margin-top: 20px;
+          background: #fff;
+          padding: 15px;
+          border-radius: 5px;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      }
+      .review {
+          margin-bottom: 15px;
+          border-bottom: 1px solid #eee;
+          padding-bottom: 10px;
+          display: flex;
+          align-items: center;
+      }
+      .review img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 15px;
+      }
+      .review:last-child {
+          border-bottom: none;
+      }
+  </style>
+  <style>
+            .introduction {
+        background: url(images/back.jpg) no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        position: relative;
+        z-index: 1;
+        }
+
+        .introduction::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        z-index: -1;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 20px; 
+            margin-bottom: 15px; 
+            font-size: 18px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 15px;
+            font-size: 18px; 
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+  </style>
 </head>
 <body>
-    <header class="header__section">
-        <ul class="header__list">
-            <li class="header__listitem">WOR<span>KS</span></li>
-            <li class="header__listitem">ABO<span>UT</span></li>
-            <li class="header__listitem">SERVIC<span>ES</span></li>
-            <li class="header__listitem">BL<span>OG</span></li>
-            <li class="header__listitem">CONTA<span>CT</span></li>
-        </ul>
-    </header>
-    <section class="main">
-        <h1 class="main__text">WHERE GREAT IDEAS COME TO LIFE</h1>
-        <h2 class="main__offer">Passionate creative studio helping startups grow their business!</h2>
-    </section>
-    <section class="nav">
-        <ul class="nav__list">
-            <li class="nav__listitem">01</li>
-            <li class="nav__listitem">02</li>
-            <li class="nav__listitem">03</li>
-        </ul>
-    </section>
+
+<header>
+  <h1>Магазин музыкальных инструментов "Звуковая волна"</h1>
+  <nav>
+      <a href="#introduction">Введение</a>
+      <a href="#assortment">Ассортимент</a>
+      <a href="#contacts">Отзывы</a>
+      <a href="#feedback">Обр. связь</a>
+  </nav>
+</header>
+
+<div id="introduction" class="section introduction">
+  <h1>Добро пожаловать в наш магазин!</h1>
+  <p>Добро пожаловать в "Звуковую волну" - место, где музыка оживает!</p>
+
+    <p>Наш магазин - настоящий рай для меломанов и музыкантов любого уровня. Здесь вы найдете все, что нужно для создания, воспроизведения и наслаждения музыкой.</p>
+
+    <p>Широкий ассортимент инструментов: от акустических гитар до ударных, клавишных и духовых инструментов. У нас есть все, что нужно для начинающих и профессионалов.</p>
+    
+    <h1>Почему выбирают нас:</h1>
+    
+    <p>1. Профессиональная консультация: наши опытные продавцы-консультанты помогут вам выбрать идеальный инструмент или оборудование.</p>
+    
+    <p>2. Гарантия качества: мы предлагаем только качественные товары от проверенных производителей.</p>
+    
+    <p>3. Удобная оплата и доставка: мы предлагаем различные способы оплаты и доставки по всей стране.</p>
+    
+    <p>4. Акции и скидки: регулярно проводим акции и предоставляем скидки для наших клиентов.</p>
+    
+    <h3>"Звуковая волна" - это не просто магазин, это место, где рождаются новые музыкальные идеи и вдохновение. Приходите к нам и окунитесь в мир музыки вместе с нами!</h3>
+</div>
+
+<div id="assortment" class="section">
+  <h2>Наши инструменты</h2>
+  <div class="instrument">
+      <img src="images/guitar.webp" alt="Гитара">
+      <div>
+          <h3>Гитара "Squire" - от 11990 руб.</h3>
+          <p>Гитара "Squire" - это акустическая гитара с корпусом из массива ели и накладкой из красного дерева, которая подарит вам незабываемое звучание и красоту. Она оснащена высококачественными стальными струнами, обеспечивающими чистое и яркое звучание, а также 20-ти ладовым грифом из красного дерева с инкрустацией из перламутра, что обеспечивает плавный и точный контроль. "Солнечный луч" обладает глубоким и насыщенным звуком, который покорит ваше сердце, и при этом имеет элегантный дизайн, который станет настоящим украшением любой комнаты. Эта гитара идеально подходит как для начинающих, так и для опытных музыкантов, и станет вашим верным спутником на пути к совершенству.</p>
+      </div>
+  </div>
+  <div class="instrument">
+      <img src="images/violin.jpg" alt="Скрипка">
+      <div>
+          <h3>Скрипка "Ноктюрн" - от 7990 руб.</h3>
+          <p>Скрипка "Ноктюрн" - это элегантный и изысканный инструмент, который подарит вам незабываемое звучание и красоту. Она изготовлена из высококачественных материалов: верхняя дека из ели, боковые и задняя деки из клена, гриф из красного дерева. "Ноктюрн" оснащена натуральными конскими волосами смычка, который обеспечивает плавный и контролируемый звук, а также 4-х струнной системой из стали, которая обеспечивает чистое и яркое звучание. Эта скрипка обладает глубоким и насыщенным звуком, который покорит ваше сердце, и при этом имеет элегантный дизайн, который станет настоящим украшением любой комнаты. "Ноктюрн" идеально подходит как для начинающих, так и для опытных музыкантов, и станет вашим верным спутником на пути к совершенству.
+        </p>
+      </div>
+  </div>
+  <div class="instrument">
+      <img src="images/piano.webp" alt="Фортепиано">
+      <div>
+          <h3>Фортепиано "Аврора" - от 15990 руб.</h3>
+          <p>Фортепиано "Аврора" - это акустическое вертикальное фортепиано с классическим черным глянцевым покрытием, которое завораживает своим звучанием и красотой. Оно обладает компактными размерами, идеально подходящими для домашнего использования, и оснащено высококачественными стальными струнами, обеспечивающими чистое и яркое звучание. Корпус фортепиано изготовлен из прочного и долговечного материала, а скрытые механизмы обеспечивают бесшумную игру. Клавиатура состоит из 88 клавиш, чувствительных к нажатию, что обеспечивает плавный и точный контроль. "Аврора" воспроизводит богатый и глубокий звук, который покорит ваше сердце, и при этом обладает компактностью, идеально подходящей для небольших помещений, не занимая много места. Доступная цена делает это фортепиано отличным соотношением цены и качества.</p>
+      </div>
+  </div>
+  <div class="instrument">
+      <img src="images/drums.webp" alt="Ударные">
+      <div>
+          <h3>Барабанная установка "Тайфун" - от 19990 руб.</h3>
+          <p>Барабанная установка "Тайфун" - это мощная и динамичная ударная установка, которая подарит вам невероятные эмоции от игры. Она состоит из 5-ти том-томов, бочки, хай-хэта, флэй-хэта, тамбуры и педали. Все барабаны изготовлены из высококачественной древесины, что обеспечивает чистое и насыщенное звучание. Накладки бас-бочки и томов изготовлены из премиального кожзаменителя, который обеспечивает долгий срок службы и отличную отзывчивость. "Тайфун" оснащен прочными и надежными стойками, которые обеспечивают устойчивость и комфортную игру. Эта барабанная установка идеально подходит как для начинающих, так и для опытных барабанщиков, и станет настоящим украшением любой домашней студии или репетиционной базы.</p>
+      </div>
+  </div>
+  <div class="instrument">
+      <img src="images/trum.webp" alt="Труба">
+      <div>
+          <h3>Труба "Симфония" - от 7590 руб.</h3>
+          <p>Труба "Симфония" - это яркий и мощный инструмент, который подарит вам незабываемые эмоции от игры. Она изготовлена из высококачественной латуни, что обеспечивает чистое и насыщенное звучание, а также оснащена 3-х вентильной системой, которая обеспечивает плавный и точный контроль. "Симфония" обладает ярким и мощным звуком, который покорит ваше сердце, и при этом имеет элегантный дизайн, который станет настоящим украшением любой комнаты. Эта труба идеально подходит как для начинающих, так и для опытных музыкантов, и станет вашим верным спутником на пути к совершенству.</p>
+      </div>
+  </div>
+  <div class="instrument">
+      <img src="images/sakso.jpg" alt="Саксофон">
+      <div>
+          <h3>Саксофон "Авангард" от 8990 руб.</h3>
+          <p>Саксофон "Авангард" - это динамичный и выразительный инструмент, который подарит вам незабываемые эмоции от игры. Он изготовлен из высококачественной латуни, что обеспечивает чистое и насыщенное звучание, а также оснащен механизмом с прямым действием, который обеспечивает плавный и точный контроль. "Авангард" обладает ярким и выразительным звуком, который покорит ваше сердце, и при этом имеет элегантный дизайн, который станет настоящим украшением любой комнаты. Этот саксофон идеально подходит как для начинающих, так и для опытных музыкантов, и станет вашим верным спутником на пути к совершенству.</p>
+      </div>
+  </div>
+</div>
+
+<div id="contacts" class="section">
+    <h2>Наши отзывы:</h2>
+  <div class="reviews">
+      <div class="review">
+          <img src="images/anna.webp" alt="Анна">
+          <p><strong>Анна:</strong> Я профессиональный музыкант и часто посещаю музыкальные магазины в поисках новых инструментов и оборудования. "Звуковая волна" - один из лучших магазинов, которые я когда-либо посещал. Широкий ассортимент, качественные товары, профессиональная консультация и приветливая атмосфера - все это делает покупки в "Звуковой волне" настоящим удовольствием. Я всегда советую этот магазин своим коллегам и друзьям.</p>
+      </div>
+      <div class="review">
+          <img src="images/ivan.webp" alt="Иван">
+          <p><strong>Иван:</strong> Я давно мечтал научиться играть на гитаре, и "Звуковая волна" стала для меня настоящим открытием! Продавцы-консультанты очень помогли мне выбрать подходящий инструмент, ответив на все мои вопросы и рассказав о преимуществах разных моделей. В итоге я приобрел прекрасную акустическую гитару, которая подарила мне массу удовольствия от игры. Спасибо "Звуковой волне" за профессионализм и внимательное отношение к клиентам!</p>
+      </div>
+      <div class="review">
+        <img src="images/olga.png" alt="Ольга">
+        <p><strong>Ольга:</strong> Мы решили подарить нашему сыну первый музыкальный инструмент и обратились в "Звуковую волну". Продавцы-консультанты очень внимательно выслушали наши пожелания и помогли выбрать подходящий детский барабан. Инструмент оказался качественным и безопасным для ребенка. Мы остались очень довольны покупкой и с удовольствием рекомендуем "Звуковую волну" всем родителям, которые хотят подарить своим детям радость музыки.</p>
+    </div>
+  </div>
+</div>
+<div id="feedback" class="section">
+    <h2>Обратная связь</h2>
+    <div class="feedback-form">
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Ваше имя" required pattern="[A-Za-zА-Яа-яЁё\s]+" title="Имя должно содержать только буквы и пробелы.">
+            <input type="tel" name="phone" placeholder="Номер телефона" required pattern="\+?[0-9]{10,15}" title="Введите корректный номер телефона (10-15 цифр).">
+            <input type="email" name="email" placeholder="Электронная почта" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Введите корректный адрес электронной почты.">
+            <textarea name="message" placeholder="Ваше сообщение" rows="8" required></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+<footer>
+  <p>Телефон: +7 (123) 456-78-90 | Email: info@musicalstore.ru</p>
+  <p>Социальные сети: 
+      <a href="https://facebook.com" target="_blank">Facebook</a> |
+      <a href="https://instagram.com" target="_blank">Instagram</a> |
+      <a href="https://vk.com" target="_blank">VK</a>
+  </p>
+  <p>© 2024 Магазин музыкальных инструментов</p>
+  <p>Все права защищены</p>
+</footer>
+
 </body>
 </html>
